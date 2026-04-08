@@ -1,0 +1,1849 @@
+/* Reset and basic styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #E6E9DF;
+    font-family: 'Noto Sans SC', sans-serif;
+    overflow: hidden; /* Prevent body scroll */
+}
+
+/* Viewport for iPhone 17 */
+.iphone-17-viewport {
+    position: relative;
+    width: 402px;
+    height: 874px;
+    background: #F5F5F5;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0,0,0,0.1);
+}
+
+/* Pages Container */
+.pages-container {
+    width: 100%;
+    height: 100%;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1); /* 曲线后缓动 */
+}
+
+.page {
+    position: relative;
+    width: 402px;
+    height: 874px;
+    overflow: hidden;
+}
+
+/* --- PAGE 1 STYLES (iPhone 17 - 9) --- */
+.rectangle-1 {
+    position: absolute;
+    width: 402px;
+    height: 874px;
+    left: 0px;
+    top: 6px;
+    background: #FFFDF4;
+}
+
+.ellipse-8 {
+    position: absolute;
+    width: 1083px;
+    height: 1083px;
+    left: 18px;
+    top: -656px;
+    background: radial-gradient(39.79% 39.79% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    backdrop-filter: blur(2px);
+    border-radius: 50%;
+}
+
+.ellipse-9-p1 {
+    position: absolute;
+    width: 1236px;
+    height: 1237px;
+    left: -662px;
+    top: 427px;
+    background: radial-gradient(39.79% 39.79% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    backdrop-filter: blur(2px);
+    border-radius: 50%;
+}
+
+.withered-wood-photo {
+    position: absolute;
+    width: 562.6px;
+    height: 750.13px;
+    left: -104px;
+    top: -57px;
+    z-index: 5;
+    background: url('生成枯木照片(1).png') no-repeat center;
+    background-size: contain;
+    background-blend-mode: luminosity;
+    filter: grayscale(100%) brightness(0.9) contrast(0.8);
+    transform: rotate(21.64deg);
+}
+
+.group-11 {
+    position: absolute;
+    width: 239px;
+    height: 523px;
+    left: 136px;
+    top: 6px;
+}
+
+.the-rebirth-of {
+    position: absolute;
+    width: 523px;
+    height: 120px;
+    left: 255px;
+    top: 6px;
+    font-family: 'Adobe Jenson Pro', 'Noto Serif SC', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 82px;
+    color: rgba(160, 174, 145, 0.5);
+    filter: blur(1.9px);
+    transform: rotate(90deg);
+    transform-origin: left top;
+    white-space: nowrap;
+}
+
+.all-things {
+    position: absolute;
+    width: 375px;
+    height: 120px;
+    left: 136px;
+    top: 6px;
+    font-family: 'Adobe Jenson Pro', 'Noto Serif SC', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 82px;
+    color: rgba(160, 174, 145, 0.5);
+    filter: blur(1.9px);
+    transform: rotate(90deg);
+    transform-origin: left top;
+    white-space: nowrap;
+}
+
+.title-chinese-p1 {
+    position: absolute;
+    width: 256px;
+    height: 74px;
+    left: 35px;
+    top: 600px;
+    font-family: 'GenWanMin JP', 'Noto Serif SC', serif;
+    font-size: 64px;
+    line-height: 74px;
+    color: #556842;
+}
+
+.description {
+    position: absolute;
+    width: 320px;
+    left: 35px;
+    top: 674px;
+    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #A0AE91;
+    text-align: justify;
+}
+
+.scroll-indicator-group {
+    position: absolute;
+    width: 60px;
+    left: 171px;
+    top: 823px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.scroll-text {
+    font-size: 10px;
+    color: #556842;
+    margin-bottom: 5px;
+}
+
+.polygon-1 {
+    width: 16px;
+    height: 10px;
+    background: #556842;
+    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+}
+
+/* --- PAGE 2 STYLES (iPhone 17 - 10) --- */
+.rectangle-2 {
+    position: absolute;
+    width: 402px;
+    height: 874px;
+    left: 0px;
+    top: 0px;
+    background: #FFFDF4;
+}
+
+.ellipse-9-p2 {
+    position: absolute;
+    width: 1236px;
+    height: 1237px;
+    left: -662px;
+    top: -447px;
+    background: radial-gradient(39.79% 39.79% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    backdrop-filter: blur(2px);
+    border-radius: 50%;
+}
+
+/* Page 2 Group 11 (English Titles) */
+.p2-group-11 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 1; /* Under trash-can-bg (z-index 2) */
+    pointer-events: none; /* Don't interfere with mouse interaction */
+}
+
+.p2-the-rebirth-of {
+    position: absolute;
+    width: 523px;
+    height: 120px;
+    left: 167px; /* 67 + 100 */
+    top: -33px;
+    font-family: 'Adobe Jenson Pro', 'Noto Serif SC', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 82px;
+    color: rgba(160, 174, 145, 0.5);
+    filter: blur(1.9px);
+    transform: rotate(90deg);
+    transform-origin: left top;
+    white-space: nowrap;
+}
+
+.p2-all-things {
+    position: absolute;
+    width: 375px;
+    height: 120px;
+    left: 48px; /* -52 + 100 */
+    top: -33px;
+    font-family: 'Adobe Jenson Pro', 'Noto Serif SC', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 82px;
+    color: rgba(160, 174, 145, 0.5);
+    filter: blur(1.9px);
+    transform: rotate(90deg);
+    transform-origin: left top;
+    white-space: nowrap;
+}
+
+.vector-1 {
+    position: absolute;
+    width: 0px;
+    height: 675.5px;
+    left: 324px;
+    top: 22px;
+    border: 1px solid #556842;
+}
+
+.trash-can-bg {
+    position: absolute;
+    width: 461.91px;
+    height: 827.59px;
+    left: -51px;
+    top: 54px;
+    background: url('垃圾桶背景.png') no-repeat center;
+    background-size: contain;
+    transform: rotate(4.17deg) scale(0.8505);
+    opacity: 0;
+    transition: opacity 800ms ease, filter 800ms ease;
+    filter: blur(10px) grayscale(50%);
+    z-index: 2;
+}
+
+.page-2:has(#toPage3Btn:hover) .trash-can-bg {
+    opacity: 0.6;
+    filter: blur(2px) grayscale(0%);
+}
+
+.ellipse-6 {
+    position: absolute;
+    width: 274.84px;
+    height: 77.52px;
+    left: -113px;
+    top: 645.26px;
+    background: radial-gradient(50% 50% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    backdrop-filter: blur(8.2px);
+    transform: rotate(-2.94deg);
+    border-radius: 50%;
+}
+
+.ellipse-7 {
+    position: absolute;
+    width: 351.69px;
+    height: 99.19px;
+    left: 118px;
+    top: 631.26px;
+    background: radial-gradient(50% 50% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    backdrop-filter: blur(8.2px);
+    transform: rotate(-7.77deg);
+    border-radius: 50%;
+}
+
+.wood-object-photo {
+    position: absolute;
+    width: 451.58px;
+    height: 642.12px;
+    left: -45.04px;
+    top: 145.6px;
+    background: url('1775446237523_download(1).png') no-repeat center;
+    background-size: contain;
+    background-blend-mode: luminosity;
+    filter: grayscale(60%) brightness(1.08) contrast(0.9);
+    transform: rotate(3.73deg) scale(1.1);
+    z-index: 5;
+}
+
+.milk-tea-bag-photo {
+    position: absolute;
+    width: 177px;
+    height: 209px;
+    left: 77px;
+    top: 512px;
+    background: url('奶茶袋(1).png') no-repeat center;
+    background-size: contain;
+    background-blend-mode: luminosity;
+    filter: grayscale(60%) brightness(1.08) contrast(0.9);
+    transform: rotate(-1.77deg) scale(1);
+    z-index: 5;
+}
+
+.milk-tea-bag-bg {
+    position: absolute;
+    width: 208.23px;
+    height: 232.45px;
+    left: 67px;
+    top: 499px;
+    background: url('奶茶袋背景.png') no-repeat center;
+    background-size: contain;
+    transform: rotate(-1.95deg);
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 800ms ease, filter 800ms ease;
+    filter: blur(10px) grayscale(50%);
+    pointer-events: none;
+}
+
+.page-2:has(.p2-milk-tea-object:hover) .milk-tea-bag-bg,
+.page-2:has(.p2-milk-tea-object:active) .milk-tea-bag-bg {
+    opacity: 0.6;
+    filter: blur(2px) grayscale(0%);
+}
+
+.title-chinese-vertical {
+    position: absolute;
+    width: 41px;
+    height: 184px;
+    left: 337px;
+    top: 22px;
+    font-family: 'GenWanMin JP', 'Noto Serif SC', serif;
+    font-size: 40px;
+    line-height: 46px;
+    color: #556842;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+/* Page 2 Hover Text Elements */
+.text-not-repair {
+    position: absolute;
+    width: 15px;
+    height: 119px;
+    left: 296px;
+    top: 31px;
+    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 17px;
+    color: #556842;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 800ms ease;
+}
+
+.group-12 {
+    position: absolute;
+    width: 96px;
+    height: 111px;
+    left: 232px;
+    top: 164px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 800ms ease;
+}
+
+.page-2:has(.small-object-photo:hover) .text-not-repair,
+.page-2:has(.small-object-photo:hover) .group-12,
+.page-2.revealed .text-not-repair,
+.page-2.revealed .group-12,
+.page-2:has(.small-object-photo:hover) .text-p2-description,
+.page-2.revealed .text-p2-description {
+    opacity: 1;
+}
+
+.text-p2-description {
+    position: absolute;
+    width: 264px;
+    height: 30px;
+    left: 69px;
+    top: 804px;
+    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    color: #A0AE91;
+    opacity: 0;
+    transition: opacity 800ms ease;
+    z-index: 10;
+}
+
+.text-awaken {
+    position: absolute;
+    width: 32px;
+    height: 74px;
+    left: 32px; /* 264-232 */
+    top: 19px;  /* 183-164 */
+    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    color: rgba(255, 253, 244, 0.7);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.bracket-open {
+    position: absolute;
+    width: 32px;
+    height: 37px;
+    left: 0px;   /* 232-232 */
+    top: 0px;   /* 164-164 */
+    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    color: rgba(255, 253, 244, 0.7);
+}
+
+.bracket-close {
+    position: absolute;
+    width: 32px;
+    height: 37px;
+    left: 64px;  /* 296-232 */
+    top: 74px;  /* 238-164 */
+    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    color: rgba(255, 253, 244, 0.7);
+}
+
+.small-object-photo {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 170px;
+    top: 440px;
+    background: url('29bb384f2367d8d42c84c2d7b1bfc0f58ce8ccce7902-6QjVTJ_fw658webp(1).png') no-repeat center;
+    background-size: contain;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: float 3s ease-in-out infinite;
+}
+
+.p2-milk-tea-object {
+    position: absolute;
+    left: 149px;
+    top: 635px;
+    z-index: 6;
+    cursor: pointer;
+}
+
+.p2-milk-tea-object::before {
+    content: '点击探索';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(85, 104, 66, 0.8);
+    color: #FFFDF4;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+}
+
+.p2-milk-tea-object:hover::before {
+    opacity: 1;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.interaction-hint {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(85, 104, 66, 0.8);
+    color: #FFFDF4;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+}
+
+.small-object-photo:hover {
+    transform: scale(1.2);
+}
+
+.small-object-photo:hover .interaction-hint {
+    opacity: 1;
+}
+
+.scroll-up-group {
+    position: absolute;
+    width: 80px;
+    left: 161px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.scroll-up-text {
+    font-size: 10px;
+    color: #556842;
+    margin-top: 5px;
+}
+
+.polygon-up {
+    width: 16px;
+    height: 10px;
+    background: #556842;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* --- PAGE 3 STYLES (iPhone 17 - 12) --- */
+.page-3 {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Start off-screen right */
+    width: 402px;
+    height: 874px;
+    background: #F5F5F5;
+    z-index: 100;
+    transition: left 300ms cubic-bezier(0.4, 0, 0.2, 1); /* 后缓动 */
+}
+
+.page-3.active {
+    left: 0;
+}
+
+/* Stacking previous page elements as per latest design specifications */
+.p3-rectangle-2 {
+    position: absolute;
+    width: 402px;
+    height: 880px;
+    left: 0px;
+    top: 0px;
+    background: #FFFDF4;
+}
+
+.p3-ellipse-9 {
+    position: absolute;
+    width: 1236px;
+    height: 1237px;
+    left: -662px;
+    top: -447px;
+    background: radial-gradient(39.79% 39.79% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    backdrop-filter: blur(2px);
+    border-radius: 50%;
+}
+
+.p3-vector-1 {
+    position: absolute;
+    width: 0px;
+    height: 675.5px;
+    left: 324px;
+    top: 31px;
+    border: 1px solid #556842;
+}
+
+.p3-ellipse-6 {
+    position: absolute;
+    width: 274.84px;
+    height: 77.52px;
+    left: -113px;
+    top: 654.26px;
+    background: radial-gradient(50% 50% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    backdrop-filter: blur(8.2px);
+    transform: rotate(-2.94deg);
+    border-radius: 50%;
+}
+
+.p3-ellipse-7 {
+    position: absolute;
+    width: 351.69px;
+    height: 99.19px;
+    left: 118px;
+    top: 640.26px;
+    background: radial-gradient(50% 50% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    backdrop-filter: blur(8.2px);
+    transform: rotate(-7.77deg);
+    border-radius: 50%;
+}
+
+.p3-wood-object-photo {
+    position: absolute;
+    width: 451.58px;
+    height: 642.12px;
+    left: -45.04px;
+    top: 145.6px;
+    background: url('1775446237523_download(1).png') no-repeat center;
+    background-size: contain;
+    background-blend-mode: luminosity;
+    transform: rotate(3.73deg);
+}
+
+.p3-rectangle-3 {
+    position: absolute;
+    width: 402px;
+    height: 873px;
+    left: 0px;
+    top: 1px;
+    background: rgba(160, 174, 145, 0.2);
+    backdrop-filter: blur(13.8px);
+    z-index: 10;
+}
+
+.p3-rectangle-3 {
+    position: absolute;
+    width: 402px;
+    height: 868px;
+    left: 0px;
+    top: 6px;
+    background: rgba(160, 174, 145, 0.2);
+    backdrop-filter: blur(13.8px);
+    -webkit-backdrop-filter: blur(13.8px);
+    z-index: 1;
+}
+
+.p3-main-photo {
+    position: absolute;
+    width: 717px;
+    height: 876px;
+    left: -166px;
+    top: 0px;
+    background: url('1775451261469_download(1).png') no-repeat center;
+    background-size: contain;
+    z-index: 2;
+}
+
+/* Page 3 Group 13 (Floating Text) */
+.p3-group-13 {
+    position: absolute;
+    width: 318px;
+    height: 276px;
+    left: 50px;
+    top: 57px;
+    z-index: 20;
+    pointer-events: none;
+    filter: blur(0.7px);
+}
+
+.p3-group-13 > div {
+    position: absolute;
+    font-family: 'GenRyuMin TW TTF', 'Noto Serif SC', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFDF4;
+    opacity: 0;
+    transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1); /* 溶解（淡入） */
+}
+
+/* Delay animations when page-3 is active */
+.page-3.active .p3-group-13 div {
+    opacity: 1;
+}
+
+.page-3.active .p3-text-1 { transition-delay: 400ms; }
+.page-3.active .p3-text-2 { transition-delay: 500ms; }
+.page-3.active .p3-text-3 { transition-delay: 600ms; }
+.page-3.active .p3-text-4 { transition-delay: 700ms; }
+
+.p3-text-1 {
+    width: 180px;
+    height: 23px;
+    left: 0px;
+    top: 0px;
+}
+
+.p3-text-2 {
+    width: 120px;
+    height: 23px;
+    left: 168px;
+    top: 49px;
+}
+
+.p3-text-3 {
+    width: 100px;
+    height: 23px;
+    left: 24px;
+    top: 188px;
+}
+
+.p3-text-4 {
+    width: 240px;
+    height: 23px;
+    left: 78px;
+    top: 253px;
+}
+
+.p3-close-group {
+    position: absolute;
+    width: 42.76px;
+    height: 42.76px;
+    left: 188px;
+    top: 769px;
+    cursor: pointer;
+    z-index: 20;
+    transition: transform 300ms ease;
+}
+
+.p3-close-group:hover {
+    transform: rotate(90deg) scale(1.1);
+}
+
+.ellipse-10 {
+    position: absolute;
+    width: 42.76px;
+    height: 42.76px;
+    background: rgba(255, 253, 244, 0.2);
+    border-radius: 50%;
+}
+
+.vector-2 {
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    left: 50%;
+    top: 50%;
+    background: rgba(255, 253, 244, 0.7);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.vector-3 {
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    left: 50%;
+    top: 50%;
+    background: rgba(255, 253, 244, 0.7);
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.hotspot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.ellipse-11 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 253, 244, 0.7);
+    border-radius: 50%;
+}
+
+.ellipse-12 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 7.5px;
+    top: 7.5px;
+    background: rgba(255, 253, 244, 0.7);
+    border-radius: 50%;
+    transition: transform 300ms ease;
+}
+
+.hotspot:hover .ellipse-12 {
+    transform: scale(1.3);
+    background: rgba(255, 253, 244, 1);
+}
+
+/* --- PAGE 4: Detail Modal (iPhone 17 - 13) --- */
+.p4-detail-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 402px;
+    height: 874px;
+    z-index: 200; /* Above everything */
+    display: none; /* Controlled by active class */
+    pointer-events: none;
+}
+
+.p4-detail-overlay.active {
+    display: block;
+    pointer-events: auto;
+}
+
+/* Rectangle 5 (Full Screen Blur) */
+.p4-rectangle-5 {
+    position: absolute;
+    width: 403px;
+    height: 874px;
+    left: 0px;
+    top: 0px;
+    background: rgba(255, 253, 244, 0.1);
+    backdrop-filter: blur(7px);
+    opacity: 0;
+    transition: opacity 400ms ease-out;
+}
+
+.p4-detail-overlay.active .p4-rectangle-5 {
+    opacity: 1;
+}
+
+/* Rectangle 6 (Main Card) - Liquid Glass Effect with Bounce Animation */
+.p4-rectangle-6 {
+    position: absolute;
+    width: 340px;
+    height: 515px;
+    left: 32px;
+    top: 185px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1), 
+                inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+    
+    /* Animation initial state */
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    transition: all 500ms cubic-bezier(0.34, 1.56, 0.64, 1); /* Elastic Bounce Effect */
+}
+
+.p4-detail-overlay.active .p4-rectangle-6 {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.p4-modal-inner h3 {
+    font-family: 'GenWanMin JP', 'Noto Serif SC', serif;
+    font-size: 24px;
+    color: #556842;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.p4-modal-inner p {
+    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #556842; /* Darker for better contrast on light glass */
+    text-align: justify;
+}
+
+/* Group 10 (Close Button) - Fixed Position */
+.p4-close-group {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 186px;
+    top: 652px;
+    cursor: pointer;
+    z-index: 210; /* Above the card */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 400ms ease-out 300ms; /* Delay to show after card */
+}
+
+.p4-detail-overlay.active .p4-close-group {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.p4-close-group:hover {
+    transform: rotate(90deg) scale(1.1);
+}
+
+.p4-ellipse-13 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    top: 0;
+    background: rgba(85, 104, 66, 0.6); /* Darker green for contrast */
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.p4-vector-4, .p4-vector-5 {
+    position: absolute;
+    width: 14px;
+    height: 2px; /* Thicker */
+    left: 8px;
+    top: 14px;
+    background: #FFFDF4;
+    border-radius: 1px;
+}
+
+.p4-vector-4 {
+    transform: rotate(45deg);
+}
+
+.p4-vector-5 {
+    transform: rotate(-45deg);
+}
+    position: absolute;
+    width: 180px;
+    padding: 15px;
+    background: rgba(255, 253, 244, 0.9);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 30;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease;
+    pointer-events: auto;
+}
+
+.hotspot-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-5px);
+}
+
+.modal-content h3 {
+    margin: 0 0 8px 0;
+    font-family: 'GenWanMin JP', sans-serif;
+    font-size: 16px;
+    color: #556842;
+}
+
+.modal-content p {
+    margin: 0;
+    font-family: 'GenRyuMin TW TTF', sans-serif;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #7A8C69;
+    text-align: justify;
+}
+
+/* --- PAGE 3.1 STYLES (iPhone 17 - 12: 我与新枝) --- */
+.page-3-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 402px;
+    height: 874px;
+    z-index: 150; /* Above page-3.2 (100) */
+    transform: translateX(100%);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    will-change: transform;
+}
+
+.page-3-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 402px;
+    height: 874px;
+    background: #FFFFFF;
+    z-index: 100;
+    transform: translateX(100%); /* Start off-screen right */
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1); /* 后缓动 */
+    overflow: hidden;
+    will-change: transform;
+}
+
+.page-3-1.active {
+    transform: translateX(0);
+}
+
+.p3-1-rectangle-7 {
+    position: absolute;
+    width: 402px;
+    height: 874px;
+    left: 0px;
+    top: 0px;
+    background: #FFFDF4;
+}
+
+.p3-1-ellipse-8 {
+    position: absolute;
+    width: 1083px;
+    height: 1083px;
+    left: -97px;
+    top: -727px;
+    background: radial-gradient(39.79% 39.79% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    border-radius: 50%;
+}
+
+.p3-1-ellipse-9 {
+    position: absolute;
+    width: 1236px;
+    height: 1237px;
+    left: -671px;
+    top: 419px;
+    background: radial-gradient(39.79% 39.79% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    border-radius: 50%;
+}
+
+/* 树背景 */
+.p3-1-tree-bg {
+    position: absolute;
+    width: 344px;
+    height: 494px;
+    left: 29px;
+    top: 149px;
+    background: url('树背景.jpg') no-repeat center;
+    background-size: cover;
+}
+
+/* 标题 */
+.p3-1-title {
+    position: absolute;
+    width: 96px;
+    height: 28px;
+    left: 153px;
+    top: 62px;
+    font-family: 'GenRyuMin TW TTF', 'Noto Serif SC', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #15191E;
+    z-index: 10;
+}
+
+.p3-1-subtitle {
+    position: absolute;
+    width: 144px;
+    height: 18px;
+    left: 129px;
+    top: 111px;
+    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    color: #556842;
+    z-index: 10;
+}
+
+/* 返回按钮 (Group 17) */
+.p3-1-group-17 {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    left: 27px;
+    top: 62px;
+    cursor: pointer;
+    z-index: 20;
+    transition: transform 300ms ease;
+}
+
+.p3-1-group-17:hover {
+    transform: scale(1.1);
+}
+
+.p3-1-ellipse-14 {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    left: 0px;
+    top: 0px;
+    background: rgba(85, 104, 66, 0.2);
+    border: 0.2px solid rgba(85, 104, 66, 0.2);
+    border-radius: 50%;
+}
+
+.p3-1-vector-6 {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 16px;
+    top: 14px;
+    border: 2px solid rgba(85, 104, 66, 0.8);
+    border-right: none;
+    border-bottom: none;
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+}
+
+/* Hotspot circles */
+.p3-1-hotspot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.p3-1-ellipse-11 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(160, 174, 145, 0.7);
+    border-radius: 50%;
+}
+
+.p3-1-ellipse-12 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 7.5px;
+    top: 7.5px;
+    background: #A0AE91;
+    border-radius: 50%;
+    transition: transform 300ms ease;
+}
+
+.p3-1-hotspot:hover .p3-1-ellipse-12 {
+    transform: scale(1.2);
+}
+
+/* Group 25: 文字区 */
+.p3-1-text-definition {
+    position: absolute;
+    width: 89px;
+    height: 17px;
+    left: 156px;
+    top: 676px;
+    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 17px;
+    color: #556842;
+    z-index: 10;
+}
+
+/* Group 24 */
+.p3-1-bracket-open {
+    position: absolute;
+    width: 20px;
+    height: 23px;
+    left: 124px;
+    top: 720px;
+    font-family: 'GenRyuMin TW TTF';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(255, 253, 244, 0.7);
+}
+
+.p3-1-bracket-close {
+    position: absolute;
+    width: 20px;
+    height: 23px;
+    left: 181px;
+    top: 729px;
+    font-family: 'GenRyuMin TW TTF';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(255, 253, 244, 0.7);
+}
+
+.p3-1-text-design {
+    position: absolute;
+    width: 40px;
+    height: 23px;
+    left: 144px;
+    top: 723px;
+    font-family: 'GenRyuMin TW TTF';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFDF4;
+}
+
+.p3-1-text-in {
+    position: absolute;
+    width: 15px;
+    height: 17px;
+    left: 119px;
+    top: 726px;
+    font-family: 'GenRyuMin TW TTF';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 17px;
+    color: #556842;
+}
+
+.p3-1-text-rewrite {
+    position: absolute;
+    width: 90px;
+    height: 17px;
+    left: 191px;
+    top: 726px;
+    font-family: 'GenRyuMin TW TTF';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 17px;
+    color: #556842;
+}
+
+/* Group 28: 盘子（点击 Group 23 后显现） */
+.p3-1-group-28 {
+    position: absolute;
+    width: 112px;
+    height: 87px;
+    left: 240px;
+    top: 181px;
+    z-index: 6;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    pointer-events: none;
+}
+
+.p3-1-group-28.visible {
+    opacity: 1;
+}
+
+.p3-1-panzibg {
+    position: absolute;
+    width: 112px;
+    height: 87px;
+    left: 0px;
+    top: 0px;
+    background: url('盘子bg.png') no-repeat center;
+    background-size: contain;
+}
+
+.p3-1-panzi {
+    position: absolute;
+    width: 100px;
+    height: 77px;
+    left: 6px;   /* 246-240 */
+    top: 5px;    /* 186-181 */
+    background: url('盘子.png') no-repeat center;
+    background-size: contain;
+}
+
+/* Group 27: 毛毡布（点击 Group 22 后显现） */
+.p3-1-group-27 {
+    position: absolute;
+    width: 151.11px;
+    height: 106px;
+    left: 201px;
+    top: 343px;
+    z-index: 6;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    pointer-events: none;
+}
+
+.p3-1-group-27.visible {
+    opacity: 1;
+}
+
+.p3-1-maozhanbbg {
+    position: absolute;
+    width: 151.11px;
+    height: 106px;
+    left: 0px;
+    top: 0px;
+    background: url('毛毡布bg.png') no-repeat center;
+    background-size: contain;
+}
+
+.p3-1-maozhanb {
+    position: absolute;
+    width: 139.83px;
+    height: 98.11px;
+    left: 5.64px;  /* 206.64-201 */
+    top: 3.38px;   /* 346.38-343 */
+    background: url('毛毡布.png') no-repeat center;
+    background-size: contain;
+}
+
+/* Group 29: 铁丝（点击 Group 5 后显现） */
+.p3-1-group-29 {
+    position: absolute;
+    width: 169px;
+    height: 82px;
+    left: 161px;
+    top: 626px;
+    z-index: 6;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    pointer-events: none;
+}
+
+.p3-1-group-29.visible {
+    opacity: 1;
+}
+
+.p3-1-tiezibg {
+    position: absolute;
+    width: 82px;
+    height: 169px;
+    left: 0px;
+    top: 0px;
+    background: url('铁丝bg.png') no-repeat center;
+    background-size: contain;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+}
+
+.p3-1-tiezi {
+    position: absolute;
+    width: 61.49px;
+    height: 157.18px;
+    left: 5px;  
+    top: -10px;   
+    background: url('铁丝.png') no-repeat center;
+    background-size: contain;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+}
+
+/* Group 21: 查看成品按钮 */
+.p3-1-group-21 {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    left: 151px;
+    top: 786px;
+    cursor: pointer;
+    z-index: 10;
+    transition: opacity 200ms ease;
+}
+
+.p3-1-group-21:hover {
+    opacity: 0.8;
+}
+
+.p3-1-rectangle-9 {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+    background: rgba(160, 174, 145, 0.2);
+    border: 1px solid #A0AE91;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.p3-1-text-view {
+    position: absolute;
+    width: 60px;
+    height: 14px;
+    left: 20px;
+    top: 13px;
+    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 17px;
+    color: #556842;
+}
+
+/* --- PAGE 3.2: Milk Tea Bag Craft (iPhone 17 - 18) --- */
+.page-3-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 402px;
+    height: 874px;
+    background: #FFFDF4;
+    z-index: 100;
+    transform: translateX(100%); /* Start off-screen right */
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1); /* 后缓动 */
+    overflow: hidden;
+    will-change: transform;
+}
+
+.page-3-2.active {
+    transform: translateX(0);
+}
+
+/* Background elements */
+.p3-2-rectangle-7 {
+    position: absolute;
+    width: 402px;
+    height: 874px;
+    left: 0px;
+    top: 0px;
+    background: #FFFDF4;
+}
+
+.p3-2-ellipse-8 {
+    position: absolute;
+    width: 1083px;
+    height: 1083px;
+    left: -97px;
+    top: -727px;
+    background: radial-gradient(39.79% 39.79% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    border-radius: 50%;
+}
+
+.p3-2-ellipse-9 {
+    position: absolute;
+    width: 1236px;
+    height: 1237px;
+    left: -662px;
+    top: 427px;
+    background: radial-gradient(39.79% 39.79% at 50% 50%, #A0AE91 0%, rgba(160, 174, 145, 0) 100%);
+    border-radius: 50%;
+}
+
+/* Main background */
+.p3-2-milk-tea-background {
+    position: absolute;
+    width: 344px;
+    height: 494px;
+    left: 29px;
+    top: 137px;
+    background: url('奶茶.jpg') no-repeat center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.p3-2-ellipse-8,
+.p3-2-ellipse-9 {
+    z-index: 2;
+}
+
+/* Group 20 */
+.p3-2-group-20 {
+    position: absolute;
+    width: 326px;
+    height: 329px;
+    left: 45px;
+    top: 178px;
+    z-index: 3;
+}
+
+/* Dashed border rectangle */
+.p3-2-rectangle-8 {
+    position: absolute;
+    width: 344px;
+    height: 180px;
+    left: 29px;
+    top: 658px;
+    border: 2px dashed #556842;
+    border-radius: 20px;
+}
+
+/* Bag background elements */
+.p3-2-bag1-bg {
+    position: absolute;
+    width: 59px;
+    height: 79px;
+    left: 64px;
+    top: 250px;
+    background: url('袋子1bg.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.5;
+}
+
+.p3-2-bag2-bg {
+    position: absolute;
+    width: 78px;
+    height: 104px;
+    left: 15px;
+    top: 0px;
+    background: url('袋子2bg.png') no-repeat center;
+    background-size: contain;
+    transform: rotate(-4deg);
+    opacity: 0.5;
+}
+
+.p3-2-bag3-bg {
+    position: absolute;
+    width: 80px;
+    height: 107px;
+    left: 189px;
+    top: 124px;
+    background: url('袋子3bg.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.5;
+}
+
+.p3-2-bag5-bg {
+    position: absolute;
+    width: 77px;
+    height: 55px;
+    left: 226px;
+    top: 262px;
+    background: url('袋子5bg.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.5;
+}
+
+.p3-2-bag4-3-bg {
+    position: absolute;
+    width: 47px;
+    height: 75px;
+    left: 279px;
+    top: 193px;
+    background: url('袋子4.3bg.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.5;
+}
+
+.p3-2-bag6-bg {
+    position: absolute;
+    width: 78px;
+    height: 68px;
+    left: 0px;
+    top: 229px;
+    background: url('袋子6bg.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.5;
+}
+
+.p3-2-bag7-bg {
+    position: absolute;
+    width: 57px;
+    height: 76px;
+    left: 108px;
+    top: 207px;
+    background: url('袋子7bg.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.5;
+}
+
+.p3-2-bag8-bg {
+    position: absolute;
+    width: 76px;
+    height: 73px;
+    left: 32px;
+    top: 133px;
+    background: url('袋子8bg.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.5;
+}
+
+/* Group 19 */
+.p3-2-group-19 {
+    position: absolute;
+    width: 302px;
+    height: 172px;
+    left: 51px;
+    top: 658px;
+}
+
+/* Group 16 */
+.p3-2-group-16 {
+    position: absolute;
+    width: 299px;
+    height: 104px;
+    left: 0px;
+    top: 0px;
+}
+
+/* Group 18 */
+.p3-2-group-18 {
+    position: absolute;
+    width: 292px;
+    height: 68px;
+    left: 10px;
+    top: 104px;
+}
+
+/* Bag elements */
+.p3-2-bag1 {
+    position: absolute;
+    width: 53px;
+    height: 71px;
+    left: 0px;
+    top: 16px;
+    background: url('袋子1.png') no-repeat center;
+    background-size: contain;
+}
+
+.p3-2-bag2 {
+    position: absolute;
+    width: 73.86px;
+    height: 98.48px;
+    left: 58px;
+    top: 0px;
+    background: url('袋子2.png') no-repeat center;
+    background-size: contain;
+    transform: rotate(-4.19deg);
+}
+
+.p3-2-bag3 {
+    position: absolute;
+    width: 78px;
+    height: 103px;
+    left: 144px;
+    top: 1px;
+    background: url('袋子3.png') no-repeat center;
+    background-size: contain;
+}
+
+.p3-2-bag5 {
+    position: absolute;
+    width: 72px;
+    height: 51px;
+    left: 227px;
+    top: 26px;
+    background: url('袋子5.png') no-repeat center;
+    background-size: contain;
+}
+
+.p3-2-bag4-3 {
+    position: absolute;
+    width: 42px;
+    height: 68px;
+    left: 0px;
+    top: 0px;
+    background: url('袋子4.3.png') no-repeat center;
+    background-size: contain;
+}
+
+.p3-2-bag6 {
+    position: absolute;
+    width: 71px;
+    height: 62px;
+    left: 53px;
+    top: 3px;
+    background: url('袋子6.png') no-repeat center;
+    background-size: contain;
+}
+
+.p3-2-bag7 {
+    position: absolute;
+    width: 52px;
+    height: 68px;
+    left: 147px;
+    top: 0px;
+    background: url('袋子7.png') no-repeat center;
+    background-size: contain;
+}
+
+.p3-2-bag8 {
+    position: absolute;
+    width: 70px;
+    height: 67px;
+    left: 222px;
+    top: 0px;
+    background: url('袋子8.png') no-repeat center;
+    background-size: contain;
+}
+
+/* Draggable items */
+.draggable-item {
+    cursor: grab;
+    transition: transform 0.2s ease;
+    z-index: 10;
+}
+
+.draggable-item:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+}
+
+/* Drop zones */
+.p3-2-drop-zones {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+    z-index: 4;
+}
+
+.drop-zone {
+    position: absolute;
+    background: transparent;
+    border: none;
+    pointer-events: auto;
+    transition: none;
+}
+
+.drop-zone:hover {
+    background: transparent;
+}
+
+/* Position drop zones */
+#drop-bag1 {
+    width: 53px;
+    height: 71px;
+    left: 112px;
+    top: 432px;
+}
+
+#drop-bag2 {
+    width: 73.86px;
+    height: 98.48px;
+    left: 63px;
+    top: 181px;
+    transform: rotate(-4.19deg);
+}
+
+#drop-bag3 {
+    width: 78px;
+    height: 103px;
+    left: 235px;
+    top: 304px;
+}
+
+#drop-bag5 {
+    width: 72px;
+    height: 51px;
+    left: 274px;
+    top: 442px;
+}
+
+#drop-bag4-3 {
+    width: 42px;
+    height: 68px;
+    left: 327px;
+    top: 376px;
+}
+
+#drop-bag6 {
+    width: 71px;
+    height: 62px;
+    left: 48px;
+    top: 410px;
+}
+
+#drop-bag7 {
+    width: 52px;
+    height: 68px;
+    left: 156px;
+    top: 389px;
+}
+
+#drop-bag8 {
+    width: 70px;
+    height: 67px;
+    left: 80px;
+    top: 314px;
+}
+
+/* Titles */
+.p3-2-title {
+    position: absolute;
+    width: 96px;
+    height: 28px;
+    left: 153px;
+    top: 62px;
+    font-family: 'GenRyuMin TW TTF', 'Noto Serif SC', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #15191E;
+}
+
+.p3-2-subtitle {
+    position: absolute;
+    width: 144px;
+    height: 18px;
+    left: 129px;
+    top: 101px;
+    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    color: #556842;
+}
+
+/* Back button (Group 17) */
+.p3-2-group-17 {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    left: 27px;
+    top: 62px;
+    cursor: pointer;
+    z-index: 20;
+    transition: transform 300ms ease;
+}
+
+.p3-2-group-17:hover {
+    transform: scale(1.1);
+}
+
+.p3-2-ellipse-14 {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    left: 0px;
+    top: 0px;
+    background: rgba(85, 104, 66, 0.2);
+    border: 0.2px solid rgba(85, 104, 66, 0.2);
+    border-radius: 50%;
+}
+
+.p3-2-vector-6 {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 16px;
+    top: 14px;
+    border: 2px solid rgba(85, 104, 66, 0.8);
+    border-right: none;
+    border-bottom: none;
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+}

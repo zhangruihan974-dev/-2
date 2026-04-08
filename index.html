@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>物之新生 - iPhone 17 设计复原</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="iphone-17-viewport">
+        <div class="pages-container" id="pagesContainer">
+            <!-- PAGE 1: iPhone 17 - 9 -->
+            <section class="page page-1">
+                <div class="rectangle-1"></div>
+                <div class="ellipse-8"></div>
+                <div class="ellipse-9-p1"></div>
+                <div class="withered-wood-photo"></div>
+                <div class="group-11">
+                    <div class="the-rebirth-of">The Rebirth of</div>
+                    <div class="all-things">All Things</div>
+                </div>
+                <div class="title-chinese-p1">物之新生</div>
+                <div class="description">
+                    我们以日常被遗忘的旧物、自然凋零的残片为起点，用设计唤醒废料的生命力，让褪去实用价值的残片重获存在意义，在拼接与赋形中完成从“被丢弃”到“被珍视”的物质新生，于旧物肌理里看见时间与故事的温度。
+                </div>
+                <div class="scroll-indicator-group" id="nextPageBtn">
+                    <div class="scroll-text">点击向下滑动</div>
+                    <div class="polygon-1"></div>
+                </div>
+            </section>
+
+            <!-- PAGE 2: iPhone 17 - 10 -->
+            <section class="page page-2">
+                <div class="rectangle-2"></div>
+                <div class="ellipse-9-p2"></div>
+                
+                <!-- Group 11 (English Titles) -->
+                <div class="p2-group-11">
+                    <div class="p2-the-rebirth-of">The Rebirth of</div>
+                    <div class="p2-all-things">All Things</div>
+                </div>
+                
+                <div class="vector-1"></div>
+                
+                <!-- 垃圾桶背景 (Initially hidden) -->
+                <div class="trash-can-bg"></div>
+                
+                <!-- Group 2: Shadow Ellipses -->
+                <div class="ellipse-6"></div>
+                <div class="ellipse-7"></div>
+                
+                <!-- 1775446237523_download(1) 1 -->
+                <div class="wood-object-photo"></div>
+
+                <!-- 奶茶袋背景 1（悬停小物件后显示） -->
+                <div class="milk-tea-bag-bg"></div>
+
+                <!-- 奶茶袋(1) 1 -->
+                <div class="milk-tea-bag-photo"></div>
+
+                <!-- 奶茶袋上方的小物件（与 small-object-photo 同动效） -->
+                <div class="small-object-photo p2-milk-tea-object"></div>
+                
+                <!-- 新增文字元素: 并非修复，而是 -->
+                <div class="text-not-repair">并非修复，而是</div>
+                
+                <!-- 新增文字元素: Group 12 (唤醒) -->
+                <div class="group-12">
+                    <div class="bracket-open">「</div>
+                    <div class="text-awaken">唤醒</div>
+                    <div class="bracket-close">」</div>
+                </div>
+                
+                <!-- 物之新生 (Vertical) -->
+                <div class="title-chinese-vertical">物之新生</div>
+                
+                <!-- 新增底部描述文字 -->
+                <div class="text-p2-description">通过拼接、重组、赋形等手法，让这些被判定为“无用”的物料重新获得存在的意义。</div>
+                
+                <!-- image 1 (Small Object) -->
+                <div class="small-object-photo to-page3-trigger" id="toPage3Btn">
+                    <div class="interaction-hint">点击探寻</div>
+                </div>
+                
+                <!-- Group 3 (Scroll Up Indicator) -->
+                <div class="scroll-up-group" id="prevPageBtn">
+                    <div class="polygon-up"></div>
+                    <div class="scroll-up-text">点击向上滑动</div>
+                </div>
+            </section>
+        </div>
+
+
+
+        <!-- PAGE 3.1: 我与新枝 -->
+        <section class="page page-3-1" id="page3-1">
+
+            <!-- Rectangle 7 背景色 -->
+            <div class="p3-1-rectangle-7"></div>
+
+            <!-- 奶茶袋手工背景 (树背景.jpg) -->
+            <div class="p3-1-tree-bg"></div>
+
+            <!-- Ellipse 8 -->
+            <div class="p3-1-ellipse-8"></div>
+
+            <!-- Ellipse 9 -->
+            <div class="p3-1-ellipse-9"></div>
+
+            <!-- 标题区 -->
+            <div class="p3-1-title">我与新枝</div>
+            <div class="p3-1-subtitle">从被丢弃，到被看到</div>
+
+            <!-- 返回按钮 (Group 17) -->
+            <div class="p3-1-group-17" id="closePage3-1Btn">
+                <div class="p3-1-ellipse-14"></div>
+                <div class="p3-1-vector-6"></div>
+            </div>
+
+            <!-- Hotspot Group 23 (top, left:251, top:273) → 盘子 -->
+            <div class="p3-1-hotspot" id="p3-1-hotspot-23" style="left:251px; top:273px;">
+                <div class="p3-1-ellipse-11"></div>
+                <div class="p3-1-ellipse-12"></div>
+            </div>
+            <!-- Group 28: 盘子（点击 Group 23 后显现） -->
+            <div class="p3-1-group-28" id="p3-1-group-28">
+                <div class="p3-1-panzibg"></div>
+                <div class="p3-1-panzi"></div>
+            </div>
+
+            <!-- Hotspot Group 22 (mid, left:125, top:362) → 毛毡布 -->
+            <div class="p3-1-hotspot" id="p3-1-hotspot-22" style="left:125px; top:362px;">
+                <div class="p3-1-ellipse-11"></div>
+                <div class="p3-1-ellipse-12"></div>
+            </div>
+            <!-- Group 27: 毛毡布（点击 Group 22 后显现） -->
+            <div class="p3-1-group-27" id="p3-1-group-27">
+                <div class="p3-1-maozhanbbg"></div>
+                <div class="p3-1-maozhanb"></div>
+            </div>
+
+            <!-- Hotspot Group 5 (bottom, left:181, top:484) → 铁丝 -->
+            <div class="p3-1-hotspot" id="p3-1-hotspot-5" style="left:181px; top:484px;">
+                <div class="p3-1-ellipse-11"></div>
+                <div class="p3-1-ellipse-12"></div>
+            </div>
+            <!-- Group 29: 铁丝（点击 Group 5 后显现） -->
+            <div class="p3-1-group-29" id="p3-1-group-29">
+                <div class="p3-1-tiezibg"></div>
+                <div class="p3-1-tiezi"></div>
+            </div>
+
+            <!-- "废物"的定义 -->
+            <div class="p3-1-text-definition">"废物"的定义</div>
+
+            <!-- Group 24 文字区（绝对坐标） -->
+            <div class="p3-1-text-in">在</div>
+            <div class="p3-1-text-rewrite">里被温柔重写</div>
+            <div class="p3-1-bracket-open">「</div>
+            <div class="p3-1-bracket-close">」</div>
+            <div class="p3-1-text-design">设计</div>
+
+            <!-- Group 21: 查看成品按钮 -->
+            <div class="p3-1-group-21" id="toPage3-1-ResultBtn">
+                <div class="p3-1-rectangle-9"></div>
+                <div class="p3-1-text-view">查看成品</div>
+            </div>
+
+        </section>
+
+        <!-- PAGE 3.2: Milk Tea Bag Craft -->
+        <section class="page page-3-2" id="page3-2">
+
+            <div class="p3-2-ellipse-8"></div>
+            <div class="p3-2-ellipse-9"></div>
+            <div class="p3-2-milk-tea-background"></div>
+            <div class="p3-2-rectangle-8"></div>
+
+            
+            <!-- Group 20 -->
+            <div class="p3-2-group-20">
+                <!-- 袋子背景元素 -->
+                <div class="p3-2-bag1-bg"></div>
+                <div class="p3-2-bag2-bg"></div>
+                <div class="p3-2-bag3-bg"></div>
+                <div class="p3-2-bag5-bg"></div>
+                <div class="p3-2-bag4-3-bg"></div>
+                <div class="p3-2-bag6-bg"></div>
+                <div class="p3-2-bag7-bg"></div>
+                <div class="p3-2-bag8-bg"></div>
+            </div>
+            
+            <!-- Drop Zones -->
+            <div class="p3-2-drop-zones">
+                <div class="drop-zone" id="drop-bag1" data-target="bag1"></div>
+                <div class="drop-zone" id="drop-bag2" data-target="bag2"></div>
+                <div class="drop-zone" id="drop-bag3" data-target="bag3"></div>
+                <div class="drop-zone" id="drop-bag5" data-target="bag5"></div>
+                <div class="drop-zone" id="drop-bag4-3" data-target="bag4-3"></div>
+                <div class="drop-zone" id="drop-bag6" data-target="bag6"></div>
+                <div class="drop-zone" id="drop-bag7" data-target="bag7"></div>
+                <div class="drop-zone" id="drop-bag8" data-target="bag8"></div>
+            </div>
+            
+            <!-- Group 19 -->
+            <div class="p3-2-group-19">
+                <!-- Group 16 -->
+                <div class="p3-2-group-16">
+                    <div class="p3-2-bag1 draggable-item" draggable="true" id="bag1"></div>
+                    <div class="p3-2-bag2 draggable-item" draggable="true" id="bag2"></div>
+                    <div class="p3-2-bag3 draggable-item" draggable="true" id="bag3"></div>
+                    <div class="p3-2-bag5 draggable-item" draggable="true" id="bag5"></div>
+                </div>
+                <!-- Group 18 -->
+                <div class="p3-2-group-18">
+                    <div class="p3-2-bag4-3 draggable-item" draggable="true" id="bag4-3"></div>
+                    <div class="p3-2-bag6 draggable-item" draggable="true" id="bag6"></div>
+                    <div class="p3-2-bag7 draggable-item" draggable="true" id="bag7"></div>
+                    <div class="p3-2-bag8 draggable-item" draggable="true" id="bag8"></div>
+                </div>
+            </div>
+            
+            <!-- 返回按钮 -->
+            <div class="p3-2-group-17" id="closePage3-2Btn">
+                <div class="p3-2-ellipse-14"></div>
+                <div class="p3-2-vector-6"></div>
+            </div>
+            
+            <!-- 标题 -->
+            <div class="p3-2-title">我与书桌</div>
+            <div class="p3-2-subtitle">从被丢弃，到被看到</div>
+        </section>
+    </div>
+
+    <script>
+        const container = document.getElementById('pagesContainer');
+        const nextBtn = document.getElementById('nextPageBtn');
+        const prevBtn = document.getElementById('prevPageBtn');
+
+        // ── 页面翻页 ──────────────────────────────────────────────────────────
+        nextBtn.addEventListener('pointerup', () => {
+            container.style.transform = 'translateY(-100%)';
+        });
+
+        prevBtn.addEventListener('pointerup', () => {
+            container.style.transform = 'translateY(0)';
+            document.querySelector('.page-2').classList.remove('revealed');
+        });
+
+        // ── Page 2: 垃圾桶 hover → 移动端改为 pointerenter ──────────────────
+        document.querySelectorAll('.to-page3-trigger').forEach(el => {
+            el.addEventListener('pointerenter', () => {
+                document.querySelector('.page-2').classList.add('revealed');
+            });
+        });
+
+        // ── Page 3.1 ──────────────────────────────────────────────────────────
+        const page3_1 = document.getElementById('page3-1');
+        const closePage3_1Btn = document.getElementById('closePage3-1Btn');
+
+        // 三个 hotspot 各自独立控制对应图案显隐
+        [
+            { btn: 'p3-1-hotspot-23', panel: 'p3-1-group-28' },
+            { btn: 'p3-1-hotspot-22', panel: 'p3-1-group-27' },
+            { btn: 'p3-1-hotspot-5',  panel: 'p3-1-group-29' },
+        ].forEach(({ btn, panel }) => {
+            const b = document.getElementById(btn);
+            const p = document.getElementById(panel);
+            if (b && p) {
+                b.addEventListener('pointerup', (e) => {
+                    e.stopPropagation();
+                    p.classList.toggle('visible');
+                });
+            }
+        });
+
+        // Close Page 3.1
+        if (closePage3_1Btn) {
+            closePage3_1Btn.addEventListener('pointerup', () => {
+                page3_1.classList.remove('active');
+                document.querySelector('.page-2').classList.remove('revealed');
+            });
+        }
+
+        // ── Page 3.2 ──────────────────────────────────────────────────────────
+        const page3_2 = document.getElementById('page3-2');
+        const closePage3_2Btn = document.getElementById('closePage3-2Btn');
+        const milkTeaObject = document.querySelector('.p2-milk-tea-object');
+
+        // 奶茶袋小物件 → page3.2
+        if (milkTeaObject) {
+            milkTeaObject.addEventListener('pointerup', (e) => {
+                e.stopPropagation();
+                document.querySelector('.page-2').classList.add('revealed');
+                page3_2.classList.add('active');
+            });
+        }
+
+        // 垃圾桶小物件 → page3.1
+        const trashCanObject = document.getElementById('toPage3Btn');
+        if (trashCanObject) {
+            trashCanObject.addEventListener('pointerup', (e) => {
+                e.stopPropagation();
+                document.querySelector('.page-2').classList.add('revealed');
+                page3_1.classList.add('active');
+            });
+        }
+
+        // Close Page 3.2
+        if (closePage3_2Btn) {
+            closePage3_2Btn.addEventListener('pointerup', () => {
+                page3_2.classList.remove('active');
+                document.querySelector('.page-2').classList.remove('revealed');
+
+                const draggableItems = document.querySelectorAll('.draggable-item');
+                draggableItems.forEach(item => {
+                    if (window.resetDraggableItem) window.resetDraggableItem(item);
+                });
+                if (window.snappedItems) window.snappedItems.clear();
+            });
+        }
+
+        // ── 拖拽（Pointer Events 统一版） ────────────────────────────────────
+        (function() {
+            const originalPositions = {};
+            const snapped = new Set();
+            window.snappedItems = snapped;
+
+            let dragging = null;   // { item, offsetX, offsetY, pointerId }
+            const page32 = document.querySelector('.page-3-2');
+
+            function recordOriginal(item) {
+                if (originalPositions[item.id]) return;
+                const itemRect = item.getBoundingClientRect();
+                const pageRect = page32.getBoundingClientRect();
+                originalPositions[item.id] = {
+                    parentEl: item.parentElement,
+                    left: (itemRect.left - pageRect.left) + 'px',
+                    top:  (itemRect.top  - pageRect.top)  + 'px'
+                };
+            }
+
+            document.querySelectorAll('.draggable-item').forEach(item => {
+                recordOriginal(item);
+            });
+
+            function resetItem(item) {
+                const orig = originalPositions[item.id];
+                if (!orig) return;
+                if (item.parentElement !== page32) page32.appendChild(item);
+                item.getBoundingClientRect(); // force reflow
+                item.style.transition = 'left 0.45s cubic-bezier(0.68,-0.55,0.265,1.55), top 0.45s cubic-bezier(0.68,-0.55,0.265,1.55)';
+                item.style.left     = orig.left;
+                item.style.top      = orig.top;
+                item.style.zIndex   = '';
+                item.style.opacity  = '1';
+                item.style.pointerEvents = '';
+                setTimeout(() => {
+                    if (item.parentElement !== orig.parentEl) orig.parentEl.appendChild(item);
+                    item.style.position   = '';
+                    item.style.left       = '';
+                    item.style.top        = '';
+                    item.style.transition = '';
+                }, 460);
+            }
+            window.resetDraggableItem = resetItem;
+
+            function snapItem(item, zone) {
+                const zoneRect = zone.getBoundingClientRect();
+                const pageRect = page32.getBoundingClientRect();
+                page32.appendChild(item);
+                item.style.transition = 'left 0.25s ease, top 0.25s ease';
+                item.style.position   = 'absolute';
+                item.style.left       = (zoneRect.left - pageRect.left + (zoneRect.width  - item.offsetWidth)  / 2) + 'px';
+                item.style.top        = (zoneRect.top  - pageRect.top  + (zoneRect.height - item.offsetHeight) / 2) + 'px';
+                item.style.zIndex     = '12';
+                item.style.opacity    = '1';
+                item.style.pointerEvents = 'none';
+                setTimeout(() => { item.style.transition = ''; }, 260);
+                snapped.add(item.id);
+            }
+
+            function hitTest(item, zone) {
+                const ir = item.getBoundingClientRect();
+                const zr = zone.getBoundingClientRect();
+                const cx = (ir.left + ir.right)  / 2;
+                const cy = (ir.top  + ir.bottom) / 2;
+                return cx >= zr.left && cx <= zr.right && cy >= zr.top && cy <= zr.bottom;
+            }
+
+            function resolveDropForItem(item) {
+                const zones = document.querySelectorAll('.drop-zone');
+                let correctZone = null;
+                zones.forEach(zone => {
+                    if (!hitTest(item, zone)) return;
+                    if (zone.getAttribute('data-target') === item.id) correctZone = zone;
+                });
+                if (correctZone) snapItem(item, correctZone);
+                else resetItem(item);
+            }
+
+            // ── Pointer Events（鼠标 + 触摸统一） ────────────────────────────
+            document.querySelectorAll('.draggable-item').forEach(item => {
+                item.setAttribute('draggable', 'false');
+
+                item.addEventListener('pointerdown', function(e) {
+                    if (snapped.has(this.id)) return;
+                    e.preventDefault();
+                    this.setPointerCapture(e.pointerId);
+
+                    recordOriginal(this);
+
+                    const rect = this.getBoundingClientRect();
+                    const pageRect = page32.getBoundingClientRect();
+                    const absLeft = rect.left - pageRect.left;
+                    const absTop  = rect.top  - pageRect.top;
+                    page32.appendChild(this);
+                    this.style.position   = 'absolute';
+                    this.style.left       = absLeft + 'px';
+                    this.style.top        = absTop  + 'px';
+                    this.style.zIndex     = '20';
+                    this.style.opacity    = '0.85';
+                    this.style.transition = '';
+
+                    dragging = {
+                        item:      this,
+                        offsetX:   e.clientX - rect.left,
+                        offsetY:   e.clientY - rect.top,
+                        pointerId: e.pointerId
+                    };
+                });
+
+                item.addEventListener('pointermove', function(e) {
+                    if (!dragging || dragging.item !== this) return;
+                    e.preventDefault();
+                    const pageRect = page32.getBoundingClientRect();
+                    this.style.left = (e.clientX - dragging.offsetX - pageRect.left) + 'px';
+                    this.style.top  = (e.clientY - dragging.offsetY - pageRect.top)  + 'px';
+                });
+
+                item.addEventListener('pointerup', function(e) {
+                    if (!dragging || dragging.item !== this) return;
+                    dragging = null;
+                    resolveDropForItem(this);
+                });
+
+                item.addEventListener('pointercancel', function() {
+                    if (!dragging || dragging.item !== this) return;
+                    dragging = null;
+                    resetItem(this);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
