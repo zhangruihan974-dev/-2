@@ -1,25 +1,40 @@
 /* Reset and basic styles */
+html {
+    height: 100%;
+    /* 防止 iOS Safari 弹性回弹导致的白边 */
+    background-color: #E6E9DF;
+}
+
 body {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    min-height: 100vh;
+    /* 使用 min-height 替代 height，允许内容超出时正常撑开 */
+    min-height: 100dvh;
     background-color: #E6E9DF;
     font-family: 'Noto Sans SC', sans-serif;
+    /* body 本身不截断横向溢出，由子容器各自管理 */
     overflow-x: hidden;
+    overflow-y: auto;
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    /* 修复 iOS 安全区域：底部为手机底部导航条预留空间 */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-sizing: border-box;
 }
 
 /* Viewport for mobile devices */
 .iphone-17-viewport {
     position: relative;
     width: 100%;
-    height: 100svh;
+    /* 使用 100dvh（动态视口高度），在移动端地址栏收起/展开时自动适配 */
+    height: 100dvh;
+    min-height: 100dvh;
     background: #F5F5F5;
+    /* 改为 clip 而非 hidden，避免子元素绝对定位时被裁剪 */
     overflow: hidden;
     box-shadow: 0 0 50px rgba(0,0,0,0.1);
 }
@@ -34,10 +49,15 @@ body {
 .page {
     position: relative;
     width: 100%;
+    /* 使用 min-height 替代固定 height，让内容超出时页面可滚动 */
+    min-height: 100%;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    /* 为底部固定按钮预留空间，防止内容被遮挡 */
+    padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
 }
 
 /* --- PAGE 1 STYLES (iPhone 17 - 9) --- */
@@ -163,7 +183,10 @@ body {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    z-index: 10;
+    /* 提高层级，确保不被其他绝对定位元素遮挡 */
+    z-index: 30;
+    /* 底部安全距离：如果在底部区域，防止被手机导航条遮挡 */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .scroll-text {
@@ -547,7 +570,8 @@ body {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    z-index: 10;
+    /* 提高层级，确保在最上层可点击 */
+    z-index: 30;
 }
 
 .scroll-up-text {
@@ -1087,8 +1111,11 @@ body {
     left: 27px;
     top: 62px;
     cursor: pointer;
-    z-index: 20;
+    /* 确保返回按钮在最上层，不被背景装饰元素遮挡 */
+    z-index: 50;
     transition: transform 300ms ease;
+    /* 扩大触控响应区域（iOS 推荐最小 44px） */
+    touch-action: manipulation;
 }
 
 .p3-1-group-17:hover {
@@ -1361,8 +1388,11 @@ body {
     left: 151px;
     top: 786px;
     cursor: pointer;
-    z-index: 10;
+    /* 提高到最高层，确保不被任何父元素的 overflow:hidden 或 z-index 遮挡 */
+    z-index: 50;
     transition: opacity 200ms ease;
+    /* 触控热区扩大，防止误触 */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .p3-1-group-21:hover {
@@ -1975,8 +2005,10 @@ body {
     left: 27px;
     top: 62px;
     cursor: pointer;
-    z-index: 20;
+    /* 确保返回按钮在最上层 */
+    z-index: 50;
     transition: transform 300ms ease;
+    touch-action: manipulation;
 }
 
 .p3-2-group-17:hover {
@@ -2005,4 +2037,82 @@ body {
     border-bottom: none;
     transform: rotate(-45deg);
     box-sizing: border-box;
+}
+
+/* ============================================================
+   移动端兼容增强 & 安全距离修复
+   ============================================================ */
+
+/* Page 3.1 / 3.2：这两个页面是 position:absolute 的全屏覆盖层，
+   不在 .page 的 padding-bottom 范围内，需要单独处理底部安全距离 */
+.page-3-1,
+.page-3-2 {
+    /* 确保覆盖层撑满全屏高度（含动态视口） */
+    height: 100dvh;
+    min-height: 100dvh;
+    /* 底部保留手机导航条高度，防止按钮被遮挡 */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-sizing: border-box;
+}
+
+/* 所有可交互按钮：确保触控区域不小于 44×44px（Apple HIG 推荐） */
+.scroll-indicator-group,
+.scroll-up-group,
+.p3-1-group-17,
+.p3-1-group-21,
+.p3-1-group-31,
+.p3-2-group-17 {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 修复 page-3-1 和 page-3-2 overflow:hidden 导致按钮被裁剪的问题：
+   将其改为 clip，在大多数现代浏览器中 clip 不会建立新的 BFC，
+   也不会影响 fixed/absolute 子元素的层叠 */
+.page-3-1,
+.page-3-2 {
+    overflow: clip;
+}
+
+/* 确保页面内的背景装饰大椭圆不会挡住按钮 */
+.p3-1-ellipse-8,
+.p3-1-ellipse-9,
+.p3-2-ellipse-8,
+.p3-2-ellipse-9 {
+    pointer-events: none;
+}
+
+/* 对于 Page 1 底部"点击向下滑动"按钮：
+   如果屏幕较小（< 800px 高），按钮可能超出可视区域，
+   通过 safe-area 自动适配 */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .scroll-indicator-group {
+        /* 在支持 safe-area 的设备上，确保按钮上移足够距离 */
+        margin-bottom: env(safe-area-inset-bottom, 0px);
+    }
+}
+
+/* 小屏适配：当视口高度不足以显示所有内容时，缩小字体/位置 */
+@media screen and (max-height: 700px) {
+    .title-chinese-p1 {
+        top: 520px;
+        font-size: 52px;
+    }
+    .description {
+        top: 590px;
+        font-size: 10px;
+    }
+    .scroll-indicator-group {
+        top: 660px;
+    }
+}
+
+/* 横屏时的特殊处理 */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .iphone-17-viewport {
+        height: 100dvh;
+    }
+    .page {
+        overflow-y: scroll;
+    }
 }
