@@ -60,12 +60,16 @@ body {
     box-sizing: border-box;
 }
 
+/* Page 1 不允许滚动，内容必须全部在视口内 */
+.page-1 {
+    overflow: hidden;
+}
+
 /* --- PAGE 1 STYLES (iPhone 17 - 9) --- */
 .rectangle-1 {
     position: absolute;
     width: 100%;
     height: 100%;
-    min-height: 874px;
     left: 0px;
     top: 0px;
     background: #F7F6F4;
@@ -156,7 +160,7 @@ body {
     width: 256px;
     height: 74px;
     left: 35px;
-    top: 550px;
+    top: min(550px, 63svh);
     font-family: 'GenWanMin JP', 'Noto Serif SC', serif;
     font-size: 64px;
     line-height: 74px;
@@ -167,7 +171,7 @@ body {
     position: absolute;
     width: 320px;
     left: 35px;
-    top: 624px;
+    top: min(624px, 71.5svh);
     font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
     font-size: 11px;
     line-height: 1.6;
@@ -179,7 +183,7 @@ body {
     position: absolute;
     width: 60px;
     left: 171px;
-    top: 700px;
+    top: min(720px, 83svh);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -373,6 +377,25 @@ body {
 .page-2:has(.p2-milk-tea-object:active) .milk-tea-bag-bg {
     opacity: 0.6;
     filter: blur(2px) grayscale(0%);
+}
+
+/* 并非修复，而是唤醒 1 */
+.p2-not-repair-awaken {
+    position: absolute;
+    width: 96px;
+    height: 244px;
+    left: 232px;
+    top: 31px;
+    background: url('并非修复，而是唤醒.png') no-repeat center;
+    background-size: contain;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 800ms ease;
+}
+
+.page-2:has(.small-object-photo:hover) .p2-not-repair-awaken,
+.page-2.revealed .p2-not-repair-awaken {
+    opacity: 1;
 }
 
 .title-chinese-vertical {
@@ -1098,16 +1121,12 @@ body {
 
 .p3-1-subtitle {
     position: absolute;
-    width: 144px;
-    height: 18px;
-    left: 129px;
+    width: 142px;
+    height: 17px;
+    left: 130px;
     top: 111px;
-    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 18px;
-    color: #556842;
+    background: url('从被丢弃，到被看到.png') no-repeat center;
+    background-size: contain;
     z-index: 10;
 }
 
@@ -1186,91 +1205,16 @@ body {
     transform: scale(1.2);
 }
 
-/* Group 25: 文字区 */
+/* “废物的”定义 1 */
 .p3-1-text-definition {
     position: absolute;
-    width: 89px;
-    height: 17px;
-    left: 156px;
+    width: 167px;
+    height: 76px;
+    left: 117px;
     top: 676px;
-    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 17px;
-    color: #556842;
+    background: url('废物的定义.png') no-repeat center;
+    background-size: contain;
     z-index: 10;
-}
-
-/* Group 24 */
-.p3-1-bracket-open {
-    position: absolute;
-    width: 20px;
-    height: 23px;
-    left: 124px;
-    top: 720px;
-    font-family: 'GenRyuMin TW TTF';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-    color: rgba(255, 253, 244, 0.7);
-}
-
-.p3-1-bracket-close {
-    position: absolute;
-    width: 20px;
-    height: 23px;
-    left: 181px;
-    top: 729px;
-    font-family: 'GenRyuMin TW TTF';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-    color: rgba(255, 253, 244, 0.7);
-}
-
-.p3-1-text-design {
-    position: absolute;
-    width: 40px;
-    height: 23px;
-    left: 144px;
-    top: 723px;
-    font-family: 'GenRyuMin TW TTF';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-    color: #FFFDF4;
-}
-
-.p3-1-text-in {
-    position: absolute;
-    width: 15px;
-    height: 17px;
-    left: 119px;
-    top: 726px;
-    font-family: 'GenRyuMin TW TTF';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 17px;
-    color: #556842;
-}
-
-.p3-1-text-rewrite {
-    position: absolute;
-    width: 90px;
-    height: 17px;
-    left: 191px;
-    top: 726px;
-    font-family: 'GenRyuMin TW TTF';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 17px;
-    color: #556842;
 }
 
 /* Group 28: 盘子（点击 Group 23 后显现） */
@@ -1433,6 +1377,19 @@ body {
     color: #556842;
 }
 
+/* 查看成品按钮 */
+.p3-1-view-result-btn {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    left: 151px;
+    top: 785px;
+    background: url('查看成品.png') no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+    z-index: 20;
+}
+
 /* Group 34: 明信片弹出层 */
 .p3-1-group-34 {
     position: absolute;
@@ -1527,20 +1484,15 @@ body {
     z-index: 1;
 }
 
-/* 日期文字 (left:80, top:554) */
+/* 2026 April 10 Friday 1 */
 .p3-1-text-date {
     position: absolute;
-    width: 46px;
-    height: 42px;
+    width: 45.33px;
+    height: 40.33px;
     left: 80px;
-    top: 554px;
-    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    color: #FFFDF4;
-    writing-mode: vertical-rl;
+    top: 556px;
+    background: url('2026 April 10 Friday.png') no-repeat center;
+    background-size: contain;
     z-index: 1;
 }
 
@@ -1983,16 +1935,12 @@ body {
 
 .p3-2-subtitle {
     position: absolute;
-    width: 144px;
-    height: 18px;
-    left: 129px;
-    top: 101px;
-    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 18px;
-    color: #556842;
+    width: 142px;
+    height: 17px;
+    left: 130px;
+    top: 104px;
+    background: url('从被丢弃，到被看到.png') no-repeat center;
+    background-size: contain;
 }
 
 .p3-2-drag-hint {
@@ -2083,17 +2031,14 @@ body {
     pointer-events: none;
 }
 
-/* 小屏适配：当屏幕高度不足 780px 时，
-   将 Page 1 底部按钮上移，防止超出可视区域 */
-@media (pointer: coarse) and (max-height: 780px) {
-    .scroll-indicator-group {
-        top: 640px;
-    }
+/* 极小屏兜底（高度 < 650px，如折叠屏展开态等极端情况）：
+   进一步压缩标题和描述文字 */
+@media (pointer: coarse) and (max-height: 650px) {
     .title-chinese-p1 {
-        top: 500px;
+        font-size: 48px;
+        line-height: 56px;
     }
     .description {
-        top: 574px;
         font-size: 10px;
     }
 }
