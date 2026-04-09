@@ -60,19 +60,29 @@ body {
     box-sizing: border-box;
 }
 
-/* Page 1 不允许滚动，内容必须全部在视口内 */
+/* Page 1：允许少量滚动以访问底部按钮，但限制最大可滚动高度 */
 .page-1 {
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* --- PAGE 1 STYLES (iPhone 17 - 9) --- */
 .rectangle-1 {
     position: absolute;
     width: 100%;
-    height: 100%;
+    /* 桌面保持874px；手机端只需要780px（够放下按钮+少量留白） */
+    height: 874px;
     left: 0px;
     top: 0px;
     background: #F7F6F4;
+}
+
+/* 手机端：缩短背景高度，减少不必要的空白区域 */
+@media (pointer: coarse) {
+    .rectangle-1 {
+        height: 780px;
+        min-height: unset;
+    }
 }
 
 .ellipse-8 {
@@ -173,7 +183,7 @@ body {
     width: 256px;
     height: 74px;
     left: 35px;
-    top: min(550px, 63svh);
+    top: 550px;
     font-family: 'GenWanMin JP', 'Noto Serif SC', serif;
     font-size: 64px;
     line-height: 74px;
@@ -184,7 +194,7 @@ body {
     position: absolute;
     width: 320px;
     left: 35px;
-    top: min(624px, 71.5svh);
+    top: 624px;
     font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
     font-size: 11px;
     line-height: 1.6;
@@ -196,7 +206,8 @@ body {
     position: absolute;
     width: 60px;
     left: 171px;
-    top: min(770px, 83svh);
+    /* 固定在设计稿位置，page-1 允许少量滚动可以触达 */
+    top: 740px;
     display: flex;
     flex-direction: column;
     align-items: center;
