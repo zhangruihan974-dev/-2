@@ -60,11 +60,9 @@ body {
     box-sizing: border-box;
 }
 
-/* Page 1 允许向下延伸 */
+/* Page 1 不允许滚动，内容必须全部在视口内 */
 .page-1 {
-    overflow-y: visible;
-    height: auto;
-    min-height: 100%;
+    overflow: hidden;
 }
 
 /* --- PAGE 1 STYLES (iPhone 17 - 9) --- */
