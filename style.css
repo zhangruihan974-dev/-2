@@ -111,6 +111,18 @@ body {
     transform: rotate(21.64deg);
 }
 
+/* 物之新生 1 */
+.p1-title-chinese {
+    position: absolute;
+    width: 319px;
+    height: 107.67px;
+    left: 35px;
+    top: 600px;
+    background: url('物之新生.png') no-repeat center;
+    background-size: contain;
+    z-index: 10;
+}
+
 .group-11 {
     position: absolute;
     width: 239px;
@@ -183,7 +195,7 @@ body {
     position: absolute;
     width: 60px;
     left: 171px;
-    top: min(720px, 83svh);
+    top: min(770px, 83svh);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -454,20 +466,15 @@ body {
 
 .text-p2-description {
     position: absolute;
-    width: 264px;
-    height: 30px;
-    left: 69px;
-    top: 804px;
-    font-family: 'GenRyuMin TW TTF', 'Noto Sans SC', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 15px;
-    text-align: center;
-    color: #A0AE91;
+    width: 259px;
+    height: 27.33px;
+    left: 84px;
+    top: 790px;
+    background: url('通过拼接、重组、赋形等手法，让这些被判定为“无用”的物料重新获得存在的意义。.png') no-repeat center;
+    background-size: contain;
+    z-index: 10;
     opacity: 0;
     transition: opacity 800ms ease;
-    z-index: 10;
 }
 
 .text-awaken {
