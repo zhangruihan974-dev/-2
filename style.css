@@ -1,8 +1,6 @@
 /* Reset and basic styles */
 html {
     height: 100%;
-    /* 防止 iOS Safari 弹性回弹导致的白边 */
-    background-color: #E6E9DF;
 }
 
 body {
@@ -11,19 +9,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    /* 使用 min-height 替代 height，允许内容超出时正常撑开 */
-    min-height: 100dvh;
+    min-height: 100%;
     background-color: #E6E9DF;
     font-family: 'Noto Sans SC', sans-serif;
-    /* body 本身不截断横向溢出，由子容器各自管理 */
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    /* 修复 iOS 安全区域：底部为手机底部导航条预留空间 */
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-    box-sizing: border-box;
 }
 
 /* Viewport for iPhone 17 */
@@ -31,11 +24,8 @@ body {
     position: relative;
     width: 100%;
     max-width: 402px;
-    /* 使用 100dvh（动态视口高度），在移动端地址栏收起/展开时自动适配 */
-    height: 100dvh;
-    min-height: 100dvh;
+    height: 874px;
     background: #F5F5F5;
-    /* 改为 clip 而非 hidden，避免子元素绝对定位时被裁剪 */
     overflow: hidden;
     box-shadow: 0 0 50px rgba(0,0,0,0.1);
 }
