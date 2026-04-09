@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>物之新生 - iPhone 17 设计复原</title>
+    <title>Rebirth - The Rebirth of all things</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
@@ -169,6 +169,28 @@
                 <div class="p3-1-text-view">查看成品</div>
             </div>
 
+            <!-- Group 34: 明信片弹出层（点击查看成品后显现） -->
+            <div class="p3-1-group-34" id="p3-1-group-34">
+                <!-- 明信片白色背景框 -->
+                <div class="p3-1-postcard-border"></div>
+                <!-- 成品图片 -->
+                <div class="p3-1-postcard-img"></div>
+                <!-- 竖排文字：旧物筑树形 -->
+                <div class="p3-1-text-tree">旧物筑树形</div>
+                <!-- 竖排文字：枝叶 -->
+                <div class="p3-1-text-branch">枝叶</div>
+                <!-- 竖排文字：纳细碎 -->
+                <div class="p3-1-text-gather">纳细碎</div>
+                <!-- 日期文字 -->
+                <div class="p3-1-text-date">2026 April 10 Friday</div>
+                <!-- Group 31: 关闭按钮（右上角） -->
+                <div class="p3-1-group-31" id="p3-1-closeCardBtn">
+                    <div class="p3-1-rectangle-10"></div>
+                    <div class="p3-1-vector-7"></div>
+                    <div class="p3-1-vector-8"></div>
+                </div>
+            </div>
+
         </section>
 
         <!-- PAGE 3.2: Milk Tea Bag Craft -->
@@ -232,6 +254,9 @@
             <!-- 标题 -->
             <div class="p3-2-title">我与书桌</div>
             <div class="p3-2-subtitle">从被丢弃，到被看到</div>
+            
+            <!-- 提示文字 -->
+            <div class="p3-2-drag-hint">长按图片并拖动到指定位置</div>
         </section>
     </div>
 
@@ -276,6 +301,25 @@
                 });
             }
         });
+
+        // 查看成品 → 弹出明信片
+        const resultBtn = document.getElementById('toPage3-1-ResultBtn');
+        const cardOverlay = document.getElementById('p3-1-group-34');
+        const closeCardBtn = document.getElementById('p3-1-closeCardBtn');
+
+        if (resultBtn && cardOverlay) {
+            resultBtn.addEventListener('pointerup', (e) => {
+                e.stopPropagation();
+                cardOverlay.classList.add('visible');
+            });
+        }
+
+        if (closeCardBtn && cardOverlay) {
+            closeCardBtn.addEventListener('pointerup', (e) => {
+                e.stopPropagation();
+                cardOverlay.classList.remove('visible');
+            });
+        }
 
         // Close Page 3.1
         if (closePage3_1Btn) {
