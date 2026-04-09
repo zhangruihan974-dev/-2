@@ -118,7 +118,7 @@ body {
     height: 107.67px;
     left: 35px;
     top: 600px;
-    background: url('物之新生.png') no-repeat center;
+    background: url(物之新生.png) no-repeat center;
     background-size: contain;
     z-index: 10;
 }
@@ -129,6 +129,7 @@ body {
     height: 523px;
     left: 136px;
     top: 6px;
+    z-index: 5;
 }
 
 .the-rebirth-of {
