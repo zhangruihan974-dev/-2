@@ -195,6 +195,11 @@
                 </div>
             </div>
 
+            <!-- "查看成品"按钮和弹出层的内容在此省略 -->
+
+            <!-- 撑高占位，确保在小屏手机上页面可滚动到底部按钮 -->
+            <div class="page-height-spacer"></div>
+
         </section>
 
         <!-- PAGE 3.2: Milk Tea Bag Craft -->
@@ -261,6 +266,9 @@
             
             <!-- 提示文字 -->
             <div class="p3-2-drag-hint">长按图片并拖动到指定位置</div>
+
+            <!-- 撑高占位，确保在小屏手机上页面可滚动到底部拖拽区域 -->
+            <div class="page-height-spacer"></div>
         </section>
     </div>
 
@@ -269,12 +277,39 @@
         const nextBtn = document.getElementById('nextPageBtn');
         const prevBtn = document.getElementById('prevPageBtn');
 
+        // ── 通用：给翻页按钮绑定可靠的移动端点击事件 ──────────────────────────
+        // 原因：在 overflow-y:auto 的父容器内，pointerdown 会被 scroll 捕获，
+        // 导致 pointerup 丢失。通过在 pointerdown 时记录状态，
+        // 并在 pointerup 时判断是否为有效点击（未发生位移）来触发翻页。
+        function bindTapButton(el, callback) {
+            let startX, startY, tapped = false;
+            el.addEventListener('pointerdown', (e) => {
+                startX = e.clientX;
+                startY = e.clientY;
+                tapped = true;
+                // 阻止冒泡，防止被父级 scroll 容器捕获
+                e.stopPropagation();
+            }, { passive: true });
+            el.addEventListener('pointerup', (e) => {
+                if (!tapped) return;
+                tapped = false;
+                const dx = Math.abs(e.clientX - startX);
+                const dy = Math.abs(e.clientY - startY);
+                // 位移小于 10px 才算点击（排除拖动误触）
+                if (dx < 10 && dy < 10) {
+                    e.stopPropagation();
+                    callback(e);
+                }
+            });
+            el.addEventListener('pointercancel', () => { tapped = false; });
+        }
+
         // ── 页面翻页 ──────────────────────────────────────────────────────────
-        nextBtn.addEventListener('pointerup', () => {
+        bindTapButton(nextBtn, () => {
             container.style.transform = 'translateY(-100%)';
         });
 
-        prevBtn.addEventListener('pointerup', () => {
+        bindTapButton(prevBtn, () => {
             container.style.transform = 'translateY(0)';
             document.querySelector('.page-2').classList.remove('revealed');
         });
@@ -387,7 +422,7 @@
                 originalPositions[item.id] = {
                     parentEl: item.parentElement,
                     left: (itemRect.left - pageRect.left) + 'px',
-                    top:  (itemRect.top  - pageRect.top)  + 'px'
+                    top:  (itemRect.top  - pageRect.top + page32.scrollTop) + 'px'
                 };
             }
 
@@ -423,7 +458,8 @@
                 item.style.transition = 'left 0.25s ease, top 0.25s ease';
                 item.style.position   = 'absolute';
                 item.style.left       = (zoneRect.left - pageRect.left + (zoneRect.width  - item.offsetWidth)  / 2) + 'px';
-                item.style.top        = (zoneRect.top  - pageRect.top  + (zoneRect.height - item.offsetHeight) / 2) + 'px';
+                // 加入 scrollTop 补偿：absolute top 是相对于滚动内容顶部的
+                item.style.top        = (zoneRect.top  - pageRect.top  + (zoneRect.height - item.offsetHeight) / 2 + page32.scrollTop) + 'px';
                 item.style.zIndex     = '12';
                 item.style.opacity    = '1';
                 item.style.pointerEvents = 'none';
@@ -463,8 +499,9 @@
 
                     const rect = this.getBoundingClientRect();
                     const pageRect = page32.getBoundingClientRect();
+                    // 加入 scrollTop 补偿：absolute top 是相对于滚动内容顶部的
                     const absLeft = rect.left - pageRect.left;
-                    const absTop  = rect.top  - pageRect.top;
+                    const absTop  = rect.top  - pageRect.top + page32.scrollTop;
                     page32.appendChild(this);
                     this.style.position   = 'absolute';
                     this.style.left       = absLeft + 'px';
@@ -472,6 +509,8 @@
                     this.style.zIndex     = '20';
                     this.style.opacity    = '0.85';
                     this.style.transition = '';
+                    // 拖拽期间锁定滚动，防止手指移动触发页面滚动
+                    page32.style.overflowY = 'hidden';
 
                     dragging = {
                         item:      this,
@@ -485,19 +524,24 @@
                     if (!dragging || dragging.item !== this) return;
                     e.preventDefault();
                     const pageRect = page32.getBoundingClientRect();
+                    // 加入 scrollTop 补偿，确保拖拽位置与手指对齐
                     this.style.left = (e.clientX - dragging.offsetX - pageRect.left) + 'px';
-                    this.style.top  = (e.clientY - dragging.offsetY - pageRect.top)  + 'px';
+                    this.style.top  = (e.clientY - dragging.offsetY - pageRect.top + page32.scrollTop) + 'px';
                 });
 
                 item.addEventListener('pointerup', function(e) {
                     if (!dragging || dragging.item !== this) return;
                     dragging = null;
+                    // 恢复滚动
+                    page32.style.overflowY = '';
                     resolveDropForItem(this);
                 });
 
                 item.addEventListener('pointercancel', function() {
                     if (!dragging || dragging.item !== this) return;
                     dragging = null;
+                    // 恢复滚动
+                    page32.style.overflowY = '';
                     resetItem(this);
                 });
             });
